@@ -30,10 +30,10 @@ class Calculadora extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
-                      // BotaoCalcular(
-                      //     calculadoraController.todasOpcoesForamEscolhidas
-                      //         ? calculadoraController.onClickBotao
-                      //         : null),
+                      BotaoCalcular(
+                          calculadoraController.todasOpcoesForamEscolhidas
+                              ? calculadoraController.onClickBotao
+                              : null),
                       BotaoZerar(calculadoraController.onClickBotaoZerar)
                     ],
                   ),
@@ -70,9 +70,9 @@ class Calculadora extends StatelessWidget {
                         'Resultado: ',
                         style: TextStyle(fontSize: 28),
                       ),
-                      calculadoraController.resultado != -1
+                      calculadoraController.resultado != null
                           ? Text(
-                              calculadoraController.resultado
+                              calculadoraController.resultado!
                                   .toStringAsFixed(2),
                               style: TextStyle(fontSize: 28),
                             )

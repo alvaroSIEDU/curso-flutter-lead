@@ -6,42 +6,42 @@ class CalculadoraController = CalculadoraControllerBase
 
 abstract class CalculadoraControllerBase with Store {
   @observable
-  int primeiroNumero = -1;
+  int? primeiroNumero;
   @observable
-  int segundoNumero = -1;
+  int? segundoNumero;
   @observable
-  String operacaoEscolhida = '';
+  String? operacaoEscolhida;
   @observable
-  double resultado = -1;
+  double? resultado;
 
   @action
   bool todasOpcoesForamEscolhidas() {
-    return primeiroNumero != -1 &&
-        segundoNumero != -1 &&
-        operacaoEscolhida != '';
+    return primeiroNumero != null &&
+        segundoNumero != null &&
+        operacaoEscolhida != null;
   }
 
   @action
   void onClickBotao() {
     if (operacaoEscolhida == '+') {
-      resultado = (primeiroNumero + segundoNumero).toDouble();
+      resultado = (primeiroNumero! + segundoNumero!).toDouble();
     } else if (operacaoEscolhida == '-') {
-      resultado = (primeiroNumero - segundoNumero).toDouble();
+      resultado = (primeiroNumero! - segundoNumero!).toDouble();
     } else if (operacaoEscolhida == '*') {
-      resultado = (primeiroNumero * segundoNumero).toDouble();
-    } else if (operacaoEscolhida == '/') {
-      resultado = (primeiroNumero / segundoNumero).toDouble();
+      resultado = (primeiroNumero! * segundoNumero!).toDouble();
+    } else if (operacaoEscolhida! == '/') {
+      resultado = (primeiroNumero! / segundoNumero!).toDouble();
     } else if (operacaoEscolhida == '%') {
-      resultado = (primeiroNumero % segundoNumero).toDouble();
+      resultado = (primeiroNumero! % segundoNumero!).toDouble();
     }
   }
 
   @action
   void onClickBotaoZerar() {
-    primeiroNumero = -1;
-    segundoNumero = -1;
-    operacaoEscolhida = '';
-    resultado = -1;
+    primeiroNumero = null;
+    segundoNumero = null;
+    operacaoEscolhida = null;
+    resultado = null;
   }
 
   @action

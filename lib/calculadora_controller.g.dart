@@ -13,13 +13,13 @@ mixin _$CalculadoraController on CalculadoraControllerBase, Store {
       Atom(name: 'CalculadoraControllerBase.primeiroNumero');
 
   @override
-  int get primeiroNumero {
+  int? get primeiroNumero {
     _$primeiroNumeroAtom.reportRead();
     return super.primeiroNumero;
   }
 
   @override
-  set primeiroNumero(int value) {
+  set primeiroNumero(int? value) {
     _$primeiroNumeroAtom.reportWrite(value, super.primeiroNumero, () {
       super.primeiroNumero = value;
     });
@@ -29,13 +29,13 @@ mixin _$CalculadoraController on CalculadoraControllerBase, Store {
       Atom(name: 'CalculadoraControllerBase.segundoNumero');
 
   @override
-  int get segundoNumero {
+  int? get segundoNumero {
     _$segundoNumeroAtom.reportRead();
     return super.segundoNumero;
   }
 
   @override
-  set segundoNumero(int value) {
+  set segundoNumero(int? value) {
     _$segundoNumeroAtom.reportWrite(value, super.segundoNumero, () {
       super.segundoNumero = value;
     });
@@ -45,13 +45,13 @@ mixin _$CalculadoraController on CalculadoraControllerBase, Store {
       Atom(name: 'CalculadoraControllerBase.operacaoEscolhida');
 
   @override
-  String get operacaoEscolhida {
+  String? get operacaoEscolhida {
     _$operacaoEscolhidaAtom.reportRead();
     return super.operacaoEscolhida;
   }
 
   @override
-  set operacaoEscolhida(String value) {
+  set operacaoEscolhida(String? value) {
     _$operacaoEscolhidaAtom.reportWrite(value, super.operacaoEscolhida, () {
       super.operacaoEscolhida = value;
     });
@@ -60,13 +60,13 @@ mixin _$CalculadoraController on CalculadoraControllerBase, Store {
   final _$resultadoAtom = Atom(name: 'CalculadoraControllerBase.resultado');
 
   @override
-  double get resultado {
+  double? get resultado {
     _$resultadoAtom.reportRead();
     return super.resultado;
   }
 
   @override
-  set resultado(double value) {
+  set resultado(double? value) {
     _$resultadoAtom.reportWrite(value, super.resultado, () {
       super.resultado = value;
     });
